@@ -10,7 +10,7 @@ public class StatementTest {
     @Test
     void testRecordTransactionSendsTransactionToLogWithAmount() {
         statement.recordTransaction(50, LocalDate.of(2021, 1, 10));
-        assertTrue(statement.getLogEntry(0) instanceof Transaction);
+        assertTrue(statement.getLogEntry(0) != null);
     }
 
     @Test
@@ -18,7 +18,7 @@ public class StatementTest {
         statement.recordTransaction(50, LocalDate.of(2021, 1, 10));
         statement.recordTransaction(70, LocalDate.of(2021, 1, 10));
         statement.recordTransaction(-30, LocalDate.of(2021, 1, 10));
-        assertTrue(statement.getLogEntry(2) instanceof Transaction);
+        assertTrue(statement.getLogEntry(2) != null);
     }
 
     @Test
