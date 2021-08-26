@@ -15,9 +15,7 @@ public class Statement {
 
     public float currentBalance() {
         float result = 0;
-        for (int i = 0; i < this.log.size(); i++) {
-            result += this.log.get(i).getTransaction();
-        }
+        for (int i = 0; i < this.log.size(); i++) { result += this.log.get(i).getTransaction(); }
         return result;
     }
 

@@ -8,17 +8,11 @@ public class TransactionTest {
     Transaction transaction = new Transaction(50, date, 150);
 
     @Test
-    void testStoresTransactionAmount() {
-        assertEquals(50, transaction.getTransaction());
-    }
+    void testStoresTransactionAmount() { assertEquals(50, transaction.getTransaction()); }
 
     @Test
-    void testStoresBalanceAtTimeOfTransaction() {
-        assertEquals(150, transaction.getBalance());
-    }
+    void testStoresBalanceAtTimeOfTransaction() { assertEquals(150, transaction.getBalance()); }
 
     @Test
-    void testStoresDateAtTimeOfTransaction() {
-        assertEquals(date, transaction.getDate());
-    }
+    void testStoresDateAtTimeOfTransaction() { assertEquals(date, transaction.getDate()); }
 }
