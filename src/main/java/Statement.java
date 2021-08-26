@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -21,5 +22,9 @@ public class Statement {
 
     public Transaction getLogEntry(int index) {
         return this.log.get(index);
+    }
+
+    public ArrayList<Transaction> getLog() {
+        return this.log;
     }
 }
