@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public final class Printer {
     public static String print(Statement statement) {
+        System.out.println(statementHeader() + statementBody(statement));
         return statementHeader() + statementBody(statement);
     }
 

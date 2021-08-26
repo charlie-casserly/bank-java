@@ -7,6 +7,8 @@ public class Main {
         account.deposit(50, LocalDate.of(2021, 1, 10));
         account.deposit(50, LocalDate.of(2021, 1, 10));
         account.withdraw(50, LocalDate.of(2021, 1, 10));
-        account.withdraw(100, LocalDate.of(2021, 1, 10));
+        account.withdraw(40, LocalDate.of(2021, 1, 10));
+
+        Printer.print(account.statement);
     }
 }
