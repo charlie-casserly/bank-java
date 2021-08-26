@@ -6,20 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AccountTest {
     Statement statement = new Statement();
-    Account account = new Account(0, statement);
-
-    @Test
-    void testCanDepositTenPoundsIntoAccount() {
-        account.deposit(10, LocalDate.of(2021, 1, 10));
-        assertEquals(10, account.getBalance());
-    }
-
-    @Test
-    void testCanWithdrawSixPoundsFromAccount() {
-        account.deposit(10, LocalDate.of(2021, 1, 10));
-        account.withdraw(6, LocalDate.of(2021, 1, 10));
-        assertEquals(4, account.getBalance());
-    }
+    Account account = new Account(statement);
 
     @Test
     void testExceptionIsThrownIfWithdrawalTakesBalanceBelow0() {
