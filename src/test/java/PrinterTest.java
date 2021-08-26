@@ -6,13 +6,9 @@ public class PrinterTest {
     Statement statement = new Statement();
 
     @Test
-    void testPrintsTheStatementBody() {
+    void testPrintsTheStatement() {
         statement.recordTransaction(1000, LocalDate.of(2021, 1, 10));
-        assertEquals("10/01/2021 || 1000.00 || - || 1000.00", Printer.statementBody(statement));
-    }
-
-    @Test
-    void testPrintsTheStatementHeader() {
-        assertEquals("date || credit || debit || balance", Printer.statementHeader());
+        statement.recordTransaction(-400, LocalDate.of(2021, 1, 10));
+        assertEquals("date || credit || debit || balance\n10/01/2021 || 1000.00 || - || 1000.00\n10/01/2021 || - || 400.00 || 600.00", Printer.print(statement));
     }
 }
