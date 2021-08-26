@@ -11,4 +11,15 @@ public class AccountTest {
         account.deposit(10, LocalDate.of(2021, 1, 10));
         assertThrows(ArithmeticException.class, () -> account.withdraw(15, LocalDate.of(2021, 1, 10)));
     }
+
+    @Test
+    void testExceptionIsThrownIfNegativeAmountIsDeposited() {
+        assertThrows(ArithmeticException.class, () -> account.deposit(-15, LocalDate.of(2021, 1, 10)));
+    }
+
+    @Test
+    void testExceptionIsThrownIfNegativeAmountIsWithdrawn() {
+        account.deposit(10, LocalDate.of(2021, 1, 10));
+        assertThrows(ArithmeticException.class, () -> account.withdraw(-5, LocalDate.of(2021, 1, 10)));
+    }
 }
