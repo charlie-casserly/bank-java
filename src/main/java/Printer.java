@@ -13,11 +13,11 @@ public final class Printer {
     }
 
     private static String statementBody(Statement statement) {
-        ArrayList<String> log = new ArrayList<>();
+        ArrayList<String> transactions = new ArrayList<>();
         for (int i = 0; i < statement.getLog().size(); i++) {
-            log.add(formatBody(statement, i));
+            transactions.add(formatBody(statement, i));
         }
-        return String.join("\n", log);
+        return String.join("\n", transactions);
     }
 
     private static String formatBody(Statement statement, int i) {
