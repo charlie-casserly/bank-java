@@ -5,7 +5,7 @@ public class Statement {
     private ArrayList<Transaction> log = new ArrayList<>();
 
     public Statement() {
-        ArrayList<Transaction> log = new ArrayList<Transaction>();
+        ArrayList<Transaction> log = new ArrayList<>();
     }
 
     public void recordTransaction(float amount, LocalDate localDate) {
@@ -23,7 +23,5 @@ public class Statement {
         return this.log.get(index);
     }
 
-    public ArrayList<Transaction> getLog() {
-        return this.log;
-    }
+    public ArrayList<Transaction> getLog() { return this.log; }
 }

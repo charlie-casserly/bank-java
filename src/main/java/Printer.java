@@ -1,3 +1,4 @@
+import javax.swing.plaf.nimbus.State;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
@@ -30,10 +31,18 @@ public final class Printer {
 
     private static String formatTransaction(Statement statement, int i) {
         if (statement.getLogEntry(i).getTransaction() > 0) {
-            return " || " + formatCashAmount(statement, i) + " || - || ";
+            return formatCredit(statement, i);
         } else {
-            return " || - || " + formatCashAmount(statement, i) + " || ";
+            return formatDebit(statement, i);
         }
+    }
+
+    private static String formatCredit(Statement statement, int i) {
+        return " || " + formatCashAmount(statement, i) + " || - || ";
+    }
+
+    private static String formatDebit(Statement statement, int i) {
+        return " || - || " + formatCashAmount(statement, i) + " || ";
     }
 
     private static String formatCashAmount(Statement statement, int i) {
@@ -43,5 +52,4 @@ public final class Printer {
     private static String formatBalance(Statement statement, int i) {
         return String.format("%.02f", statement.getLogEntry(i).getBalance());
     }
-
 }
